@@ -1,22 +1,27 @@
-"""Courier URL Configuration
+from django.urls import path
 
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/2.1/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
-from django.contrib import admin
-from django.urls import path, include
+from . import views
 
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('CourierApp.urls')),
+urlpatterns = [path("", views.index, name="index"),
+               path("AdminLogin.html", views.AdminLogin, name="AdminLogin"),	      
+               path("AdminLoginAction", views.AdminLoginAction, name="AdminLoginAction"),
+               path("AddEmployeeAction", views.AddEmployeeAction, name="AddEmployeeAction"),
+               path("AddEmployee.html", views.AddEmployee, name="AddEmployee"),
+               path("ViewEmployees", views.ViewEmployees, name="ViewEmployees"),
+	       path("ViewCouriers", views.ViewCouriers, name="ViewCouriers"),
+	       path("EmployeeLogin.html", views.EmployeeLogin, name="EmployeeLogin"),	      
+               path("EmployeeLoginAction", views.EmployeeLoginAction, name="EmployeeLoginAction"),
+	       path("CollectCourier.html", views.CollectCourier, name="CollectCourier"),	      
+               path("CollectCourierAction", views.CollectCourierAction, name="CollectCourierAction"),
+	       path("UpdateCourier.html", views.UpdateCourier, name="UpdateCourier"),	      
+               path("UpdateCourierAction", views.UpdateCourierAction, name="UpdateCourierAction"),
+	       path("ViewCurrentStatus.html", views.ViewCurrentStatus, name="ViewCurrentStatus"),	      
+               path("ViewCurrentStatusAction", views.ViewCurrentStatusAction, name="ViewCurrentStatusAction"),
+	       path("EmployeeMap", views.EmployeeMap, name="EmployeeMap"),
+	       path("CourierTrack.html", views.CourierTrack, name="CourierTrack"),	      
+               path("CourierTrackAction", views.CourierTrackAction, name="CourierTrackAction"),
+	       path("UserMap", views.UserMap, name="UserMap"),
+	       path("Feedback.html", views.Feedback, name="Feedback"),	      
+               path("FeedbackAction", views.FeedbackAction, name="FeedbackAction"),
+	        path("ViewFeedback", views.ViewFeedback, name="ViewFeedback"),
 ]
